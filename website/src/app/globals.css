@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .banner {
+    @apply relative min-h-[500px] flex flex-col justify-center items-center text-center text-white;
+  }
+  
+  .banner::before {
+    content: '';
+    @apply absolute inset-0 bg-black/50 z-[1];
+  }
+  
+  .banner h1 {
+    @apply text-4xl md:text-5xl font-bold mb-4;
+  }
+  
+  .banner p {
+    @apply text-xl md:text-2xl;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold text-center mb-8;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white px-6 py-2 rounded-full 
+           hover:bg-blue-700 transition-colors
+           active:transform active:scale-95 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
